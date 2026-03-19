@@ -1,0 +1,6 @@
+# Ignore everything by default
+*
+
+# Keep this file and the target source file
+!.gitignore
+!SeqList.c
