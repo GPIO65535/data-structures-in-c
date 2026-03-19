@@ -1,16 +1,20 @@
 #include<stdio.h>
+#include<stdlib.h>
 typedef int ElemType;
 #define MaxSize 100
 //顺序表结构体
 typedef struct
 {
-    ElemType data[MaxSize];
+    ElemType *data;
     int length;
 }SeqList;
 //顺序表初始化
-void SeqList_Init(SeqList *L)
+SeqList *SeqList_Init(void)
 {
+    SeqList*L=(SeqList*)malloc(sizeof(SeqList));
+    L->data=(ElemType*)malloc(MaxSize*sizeof(ElemType));
     L->length=0;
+    return L;
 }
 //向顺序表尾部添加元素
 int SeqList_Append(SeqList *L,ElemType e)
@@ -80,18 +84,11 @@ void SeqList_Print(SeqList *L)
         printf("%d\n",L->data[i]);
     }
 }
-//测试顺序表
 int main()
 {
-    SeqList L;
-    SeqList_Init(&L);
-    SeqList_Append(&L,1);
-    SeqList_Append(&L,2);
-    SeqList_Append(&L,3);
-    SeqList_Insert(&L,2,4);
-    SeqList_Delete(&L,2);
-    int pos = SeqList_Search(&L,3);
-    printf("元素3的位置是: %d\n", pos);
-    SeqList_Print(&L);
-    return 0;
+    SeqList *L=SeqList_Init();
+    SeqList_Append(L,1);
+    SeqList_Append(L,2);
+    SeqList_Insert(L,2,3);
+    SeqList_Print(L);
 }
