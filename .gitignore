@@ -5,4 +5,5 @@
 !.gitignore
 !SeqList.c
 !Seq.c
+!Node.c
 
