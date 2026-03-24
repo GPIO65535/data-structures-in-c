@@ -50,3 +50,15 @@ int Stack_Pop(Stack *s,ElemType *e)
     s->top--;
     return 0;
 }
+int main(void)
+{
+    Stack s;
+    ElemType e;
+    Stack_Init(&s);
+    Stack_Push(&s,1);
+    Stack_Push(&s,2);
+    Stack_Push(&s,3);
+    Stack_Pop(&s,&e);
+    printf("³öÕ»ÔªËØ:%d\n",e);
+    return 0;
+}
