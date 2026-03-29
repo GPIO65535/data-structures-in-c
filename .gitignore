@@ -9,4 +9,5 @@
 !DoubleNode.c
 !stack.c
 !Queue.c
+!QueueNode.c
 
