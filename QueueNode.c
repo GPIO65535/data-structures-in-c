@@ -36,7 +36,11 @@ void Que_Out(q*qu,ElemType *e)
 {
     QueueNode *p=qu->front->next;
     *e=p->data;
-    p=p->next;
+    qu->front->next=p->next;
+    if(qu->rear==p)
+    {
+        qu->rear=qu->front;
+    }
     free(p);
 }
 //≤‚ ‘
